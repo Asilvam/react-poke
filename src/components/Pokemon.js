@@ -49,7 +49,9 @@ export default function Pokemon() {
     return (
         <div className="container">
             <div className={"row"}>
-                <h1 className={"display-5 fw-bold"}>Listado </h1>
+                <h1
+                    data-testid="titulo"
+                    className={"display-5 fw-bold"}>Listado </h1>
                 {results.length > 0
                     ?
                     results.map(p => (
@@ -61,12 +63,18 @@ export default function Pokemon() {
                 }
             </div>
             <div className={"d-grid gap-2 d-sm-flex justify-content-sm-center"}>
-                    <button type={"button"} className={"btn btn-outline-primary btn-lg px-4 gap-3"}
-                            onClick={() => handlePrevious()}> Previous
-                    </button>
-                    <button type={"button"} className={"btn btn-outline-primary btn-lg px-4"}
-                            onClick={() => handleNext()}> next
-                    </button>
+                <button
+                    data-testid={"btn-previous"}
+                    type={"button"}
+                    className={"btn btn-outline-primary btn-lg px-4 gap-3"}
+                    onClick={() => handlePrevious()}> Previous
+                </button>
+                <button
+                    data-testid={"btn-next"}
+                    type={"button"}
+                    className={"btn btn-outline-primary btn-lg px-4"}
+                    onClick={() => handleNext()}> next
+                </button>
             </div>
         </div>
     );
